@@ -1,0 +1,68 @@
+{% extends 'aplicacion/1home.html' %}
+
+<!-- Modificación en título central de página-->
+
+{% block titulo %}
+    <h1 class="display-5 fw-bold">Profesionales</h1>
+    <p class="fs-4">Esta es la página del profesionales.</p>
+{% endblock titulo %}
+
+<!-- Agregado de formulario a la página-->
+
+{% block formulario %}
+
+<div class="col-lg-6 col-xxl-4 mb-5">
+    <div class="card bg-light border-0 h-100">
+        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+            <a class="navbar-brand" href="{% url 'profesional_form' %}"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-plus-circle"></i></div></a>
+            <h2 class="fs-4 fw-bold"><a class="navbar-brand" href="{% url 'profesional_form' %}">AGREGAR PROFESIONAL</a></h2>            
+        </div>
+    </div>
+</div>  
+<div class="col-lg-6 col-xxl-4 mb-5">
+</div> 
+<div class="col-lg-6 col-xxl-4 mb-5">
+    <div class="card bg-light border-0 h-100">
+        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+            <a class="navbar-brand" href="{% url 'buscar' %}"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-search"></i></div></a>
+            <h2 class="fs-4 fw-bold"><a class="navbar-brand" href="{% url 'buscar' %}">BÚSQUEDA</a></h2>           
+        </div>
+    </div>
+</div>       
+
+{% endblock formulario %}
+
+
+<!-- Agregado de tabla a la página-->
+
+{% block contenido %}
+
+<div class="p-4 p-lg-4 pt-0 pt-lg-0">
+    <div class="card bg-light border-1 h-100">
+        <div class="card-body text-center p-0 p-lg-2 pt-0 pt-lg-2">            
+            <h2 class="fs-4 fw-bold"><a class="navbar-brand">Listado de profesionales disponibles.</a></h2>            
+        </div>
+    </div>
+</div> 
+ <!-------------------------------------------------------------------------------------------------------->   
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Nombre</th>                
+                <th>Profesión</th>                                  
+            </tr>
+        </thead>
+        <tbody>
+    {% for p in profesionales %}
+            <tr>
+                <td>{{ p.apellido }}</td>
+                <td>{{ p.nombre }}</td>                
+                <td>{{ p.profesion }}</td>                               
+            </tr>
+    {% endfor %}
+        </tbody>                                     
+    </table>
+    
+{% endblock contenido %}

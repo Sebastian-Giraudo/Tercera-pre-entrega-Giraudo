@@ -1,0 +1,74 @@
+{% extends 'aplicacion/1home.html' %}
+
+
+{% block titulo %}
+    <h1 class="mb-5">Página de búsqueda</h1>
+{% endblock titulo %}
+
+{% block busqueda %}
+
+<section class="pt-4">
+    <div class="container px-lg-5">
+        
+        <div class="row gx-lg-5">
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <a class="navbar-brand"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-building"></i></div></a>                                               
+                       
+                        <form action="{% url 'buscarConsultorio' %}" method="get">
+                            {% csrf_token %}                             
+                            <p><h2 class="fs-5 fw-bold">Nombre de consultorio: <input  type="text" name="buscar" id="buscar"></h2></p>
+                            <h2 class="fs-5 fw-bold"><i class="bi bi-search"></i><input class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" type="submit" value="Buscar"></h2>                        
+                        </form>
+
+                    </div>
+                </div>
+            </div>   
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <a class="navbar-brand"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-clipboard-plus"></i></div></a>                                               
+                       
+                        <form action="{% url 'buscarEspecialidad' %}" method="get">
+                            {% csrf_token %}                             
+                            <p><h2 class="fs-5 fw-bold">Nombre de la especialidad: <input  type="text" name="buscar" id="buscar"></h2></p>
+                            <h2 class="fs-5 fw-bold"><i class="bi bi-search"></i><input class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" type="submit" value="Buscar"></h2>                        
+                        </form>
+
+                    </div>
+                </div>
+            </div>  
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <a class="navbar-brand"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-briefcase"></i></div></a>                                               
+                       
+                        <form action="{% url 'buscarProfesional' %}" method="get">
+                            {% csrf_token %}                             
+                            <p><h2 class="fs-5 fw-bold">Nombre del profesional: <input  type="text" name="buscar" id="buscar"></h2></p>
+                            <h2 class="fs-5 fw-bold"><i class="bi bi-search"></i><input class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" type="submit" value="Buscar"></h2>                        
+                        </form>
+
+                    </div>
+                </div>
+            </div>  
+              
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->           
+    </div>
+</section>
+{% endblock busqueda %}
+
+{% block contenido %}
+
+{% endblock contenido %}
+
+
+

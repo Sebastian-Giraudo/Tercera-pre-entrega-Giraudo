@@ -1,0 +1,31 @@
+{% extends 'aplicacion/1home.html' %}
+
+
+{% block titulo %}
+    <h1 class="mb-5">Agregar un profesional</h1>
+{% endblock titulo %}
+
+
+
+{% block contenido %}
+
+<div class="col-lg-6 col-xxl-4 mb-5">
+
+    <div class="card bg-light border-0 h-100">
+        <div class="card-body text-center ">
+
+            <form action="" method="post">
+                
+                {% csrf_token %} 
+                <h2 class="fs-5 fw-bold">
+                <table>
+                    {{ form.as_table }}
+                </table></h2>            
+
+            <h2 class="fs-5 fw-bold"><input class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" type="submit" value="Enviar"></h2>
+            
+            </form>    
+        </div>
+    </div>
+</div> 
+{% endblock contenido %}
